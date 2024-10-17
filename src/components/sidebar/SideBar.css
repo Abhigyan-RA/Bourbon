@@ -16,3 +16,57 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.sidebar .new-chat{
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 7px 13px; 
+    background-color: #1dffce; 
+    border-radius: 25px;
+    font-size: 16px;
+    color: rgb(9, 5, 13);
+    cursor: pointer;    
+}
+
+.sidebar .new-chat:hover{
+    background-color: blueviolet;
+}
+
+
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .recent-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.sidebar .recent-entry:hover{
+    background-color: turquoise;
+}
+
+.sidebar .bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .bottom-item{
+    padding-right: 10px;
+    cursor: pointer;
+}
