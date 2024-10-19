@@ -7,6 +7,13 @@ const Main = () => {
 
   const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
 
+  // Function to handle "Enter" key press
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onSent(); // Call the onSent function when "Enter" is pressed
+    }
+  }
+
   return (
     <div className='main'>
         <div className="nav">
@@ -42,12 +49,19 @@ const Main = () => {
             </>
             : <div className="result">
                   <div className="result-title">
-                    <img src={assets.gemini_icon} alt="" />
+                    <img src={assets.user_icon} alt="" />
                     <p>{recentPrompt}</p>
                   </div>
                   <div className="result-data">
                     <img src={assets.gemini_icon} alt="" />
-                    <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+                    {loading
+                    ? <div className='loader'>
+                        <hr />
+                        <hr />
+                        <hr />
+                      </div>
+                    :<p dangerouslySetInnerHTML={{__html:resultData}}></p>
+                  }
                   </div>
               </div>
             }
@@ -57,8 +71,9 @@ const Main = () => {
 
           <div className="main-bottom">
             <div className="search-box">
-              <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here" />
-              <div>
+              <input onChange={(e) => setInput(e.target.value)} value={input} type="text" placeholder="Enter a prompt here"
+                onKeyPress={handleKeyPress}  />         
+              <div>                                                   
                 <img src={assets.gallery_icon} alt="" />
                 <img src={assets.mic_icon} alt="" />
                 <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
