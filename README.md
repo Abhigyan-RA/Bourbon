@@ -1,4 +1,4 @@
-# Bourbon
+# Bourbon AI
 
 Bourbon is an AI-powered web application designed to assist users by providing dynamic responses to their queries. The project leverages modern web development practices to deliver a user-friendly interface for interacting with the AI. 
 
