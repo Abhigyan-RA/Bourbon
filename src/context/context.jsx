@@ -3,7 +3,7 @@ import run from "../config/Bourbon";
 
 export const Context = createContext();
 
-const ContextProvider = (props) => {
+export const ContextProvider = (props) => {
 
     const [input,setInput] = useState("");                  /*to save the input data*/
     const [recentPrompt, setRecentPrompt] = useState("");   /*when we click on the send button the input data will be saved here*/
@@ -85,5 +85,3 @@ const ContextProvider = (props) => {
         </Context.Provider>
     )
 }
-
-export default ContextProvider
