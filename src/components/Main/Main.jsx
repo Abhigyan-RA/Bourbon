@@ -14,6 +14,14 @@ const Main = () => {
     }
   }
 
+  const prompts = [
+    { text: "Suggest beautiful places to visit", icon: assets.compass_icon },
+    { text: "Briefly describe Harry Potter books", icon: assets.bulb_icon },
+    { text: "What is the origin of Bourbon?", icon: assets.message_icon },
+    { text: "Play a game of 20 questions", icon: assets.code_icon }
+  ];
+
+
   return (
     <div className='main'>
         <div className="nav">
@@ -29,22 +37,14 @@ const Main = () => {
                 <p><span>How can I help you</span>?</p>
               </div>
               <div className="cards">
-                <div className="card">
-                  <p>fdgsgsfgsfg</p>
-                  <img src={assets.compass_icon} alt="" />
-                </div>
-                <div className="card">
-                  <p>dfsfdsfsdfs</p>
-                  <img src={assets.bulb_icon} alt="" />
-                </div>
-                <div className="card">
-                  <p>hfhtedrsdfsdf</p>
-                  <img src={assets.message_icon} alt="" />
-                </div>
-                <div className="card">
-                  <p>gdfgdfgdgd</p>
-                  <img src={assets.code_icon} alt="" />
+
+                {prompts.map((prompt,index)=>(     //takes the index from the user and displays it in the prompt after clicking                            
+                  <div className="card"  key={index} onClick={() => onSent(prompt.text)}>   
+                  <p>{prompt.text}</p>
+
+                  <img src={prompt.icon} alt="" />
               </div>
+                ))}                                                                         
             </div>
             </>
             : <div className="result">
@@ -76,7 +76,7 @@ const Main = () => {
               <div>                                                   
                 <img src={assets.gallery_icon} alt="" />
                 <img src={assets.mic_icon} alt="" />
-                <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
+                {input? <img onClick={()=>onSent()} src={assets.send_icon} alt="" /> : null}
               </div>
             </div>
             <p className="bottom-info">
