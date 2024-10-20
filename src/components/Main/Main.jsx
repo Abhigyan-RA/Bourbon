@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
-import { BengaliContext } from '../../context/context.jsx'
+import { Context } from '../../context/context'
 
 const Main = () => {
 
-  const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(BengaliContext)
+  const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
 
   // Function to handle "Enter" key press
   const handleKeyPress = (e) => {

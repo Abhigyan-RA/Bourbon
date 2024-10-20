@@ -1,13 +1,13 @@
 import { createContext, useState } from "react";
 import run from "../config/Bourbon";
 
-export const BengaliContext = createContext();
+export const Context = createContext();
 
 export const ContextProvider = (props) => {
 
     const [input,setInput] = useState("");                  /*to save the input data*/
     const [recentPrompt, setRecentPrompt] = useState("");   /*when we click on the send button the input data will be saved here*/
-    const [prevPrompts, setPrevPrompts] = useState([]);     /*an array to store in the recent data*/
+    const [prevPrompts, setPrevPrompts] = useState([]);       /*an array to store in the recent data*/
     const [showResult, setShowResult] = useState(false);    /*it will hide the boxes in main page and display the results of the prompt*/
     const [loading, setLoading] = useState(false);          /*it will display a loading animation*/
     const [resultData, setResultData] = useState("");       /*display the results on the web page*/
@@ -80,8 +80,8 @@ export const ContextProvider = (props) => {
     }
 
     return(
-        <BengaliContext.Provider value={contextValue}>
+        <Context.Provider value={contextValue}>
             {props.children}
-        </BengaliContext.Provider>
+        </Context.Provider>
     )
 }
