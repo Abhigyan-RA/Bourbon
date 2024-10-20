@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import run from "../config/Bourbon";
 
-export const Context = createContext();
+export const BengaliContext = createContext();
 
 export const ContextProvider = (props) => {
 
@@ -80,8 +80,8 @@ export const ContextProvider = (props) => {
     }
 
     return(
-        <Context.Provider value={contextValue}>
+        <BengaliContext.Provider value={contextValue}>
             {props.children}
-        </Context.Provider>
+        </BengaliContext.Provider>
     )
 }

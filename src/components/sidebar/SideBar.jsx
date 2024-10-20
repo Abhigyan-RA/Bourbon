@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import './sidebar.css'
 import { assets } from '../../assets/assets'
-import { Context } from '../../context/context.jsx'
+import { BengaliContext } from '../../context/context.jsx'
 
 const SideBar = () => {
 
     const[extended,setExtended] = useState(false)       //collapsing of the sidebar is determined by this function
-    const {onSent,prevPrompts,setRecentPrompt,newChat} = useContext(Context)
+    const {onSent,prevPrompts,setRecentPrompt,newChat} = useContext(BengaliContext)
 
     const loadPrompt = async(prompt) => {
       setRecentPrompt(prompt)
@@ -58,4 +58,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default SideBar;
