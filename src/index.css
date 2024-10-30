@@ -10,7 +10,7 @@
 }
 
 #root{
-  background-image: url(./assets/wallpapersden.com_pink-aesthetic-sky-hd-calm-and-beautiful_2912x1632.jpg);
+  background-color: #D1E8E2;
   display: flex;                    
   justify-content: center;
   align-items: center;

@@ -5,7 +5,7 @@ import { Context } from '../../context/context'
 
 const Main = () => {
 
-  const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
+  const {onSent,setRecentPrompt,recentPrompt,showResult,loading,resultData,setInput,input,newChat} = useContext(Context)
 
   // Function to handle "Enter" key press
   const handleKeyPress = (e) => {
@@ -25,7 +25,7 @@ const Main = () => {
   return (
     <div className='main'>
         <div className="nav">
-          <p>Bourbon</p>
+          <p onClick={() => newChat()}>Bourbon</p>
           <img src={assets.user_icon} alt="" />
         </div>
         <div className="main-container">
@@ -39,7 +39,12 @@ const Main = () => {
               <div className="cards">
 
                 {prompts.map((prompt,index)=>(     //takes the index from the user and displays it in the prompt after clicking                            
-                  <div className="card"  key={index} onClick={() => onSent(prompt.text)}>   
+                  <div className="card"  key={index} onClick={() => {
+                    onSent(prompt.text);
+                    setInput(prompt.text);
+                    setRecentPrompt(prompt.text);
+                    {recentPrompt};
+                  }}>   
                   <p>{prompt.text}</p>
 
                   <img src={prompt.icon} alt="" />
