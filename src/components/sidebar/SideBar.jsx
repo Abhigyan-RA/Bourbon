@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
-import './sidebar.css'
-import { assets } from '../../assets/assets'
+import './Sidebar.css'
+import { assets } from '../../assets/assets.js'
 import { Context } from '../../context/context.jsx'
 
-const SideBar = () => {
+const Sidebar = () => {
 
     const[extended,setExtended] = useState(false)       //collapsing of the sidebar is determined by this function
     const {onSent,prevPrompts,setRecentPrompt,newChat} = useContext(Context)
@@ -58,4 +58,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar;
+export default Sidebar;
